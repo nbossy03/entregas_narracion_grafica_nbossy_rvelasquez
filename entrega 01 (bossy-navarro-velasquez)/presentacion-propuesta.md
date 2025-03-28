@@ -11,6 +11,8 @@
 
 **Datos**: Existe un registro en la página de FandomWikia de RuPaul’s DragRace, que cuenta con los resultados de cada una de las participantes, sus posiciones en los episodios, cuando son eliminadas y sus perdidas/victorias. Están considerados en esta página las series regulares y todos los spin-offs en otros países. En otras palabras, los datos se pueden recopilar y ordenar para la investigación.
 
+<img src="./images/trackrecords1.png"> 
+
 [EJEMPLO DE DATOS RECOPILADOS POR FANDOM](https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_1))
 
 En esta página no tan solo se encuentra la información de quienes ganan el episodio, sino cuál fue la temática del episodio. En la serie existen un grupo de *Challenges* icónicos que tienden a relacionarse con la victoria o pérdida de la corona, los cuales juntaremos para ver relaciones entre, por ejemplo, ganar el Snatch Game y si esto influye en el resultado final de la serie de cada competidora. 
@@ -42,6 +44,12 @@ Todos estos datos son públicos, mientras que los episodios de la serie se encue
  Idealmente, nos gustaría basarnos en la estética de *The Pudding*, con la lógica del scrolling y las imágenes que se mantienen en la pantalla mientras la historia progresa. Queremos usar los colores e īconos de la serie, que cuenta con una estética clara que es difícil de separar de la identidad de Drag Race y nos gustaría preservar. 
 
 Cada temporada cuenta con photoshoots promocionales, tanto de todo el cast como de cada una de las drag queens. Aquí hay un ejemplo de la primera temporada, acompañada de un Mug Shot de su ganadora, Bebe Zahara Benet. 
+
+<img src="./images/S1_Cast.webp"> 
+
+
+<img src="./images/Bebe1.webp"> 
+
 
 # **Resultados**
 
