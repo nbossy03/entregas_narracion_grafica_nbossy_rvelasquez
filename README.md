@@ -1,1 +1,0 @@
-# entregas_narracion_grafica_nbossy_rvelasquez
