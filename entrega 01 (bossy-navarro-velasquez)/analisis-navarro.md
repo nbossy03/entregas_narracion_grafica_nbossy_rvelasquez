@@ -1,8 +1,8 @@
 # Análisis de Entrega 01 Belén Navarro
 
 la identidad dentro de nuestra sociedad. A través de este análisis, me interesa comprender cómo las personas que se dedican a esta forma de arte desafían normas establecidas de belleza, y cómo esto impacta en el entendimiento general de la identidad humana.
- Poder contar y revelar cómo el arte drag no solo es una forma de entretenimiento, sino también un vehículo de expresión y empoderamiento para muchas personas.
- Mis tres ideas para llevar a cabo esto es: Realizar entrevistas con drag queens que compartan sus experiencias personales y las razones que las impulsan a expresarse a través de este arte. Esto no solo permitirá conocer la perspectiva de quienes viven este fenómeno, sino también dar voz a una comunidad muchas veces ha sido oprimida.
+Poder contar y revelar cómo el arte drag no solo es una forma de entretenimiento, sino también un vehículo de expresión y empoderamiento para muchas personas.
+Mis tres ideas para llevar a cabo esto es: Realizar entrevistas con drag queens que compartan sus experiencias personales y las razones que las impulsan a expresarse a través de este arte. Esto no solo permitirá conocer la perspectiva de quienes viven este fenómeno, sino también dar voz a una comunidad muchas veces ha sido oprimida.
 
 segundo, analizar cómo el arte drag ha influido en otros ámbitos de la cultura, como la moda, el cine, la música, alrededor de todo el mundo. Sobre todo en el ambito politico, Qué es lo que hace que gane una drag y cuales son las consecuencia. Los artistas drag suelen exagerar características de un género para crear personajes únicos. Esto incluye vestuario, maquillaje, y el comportamiento que adoptan.
 
