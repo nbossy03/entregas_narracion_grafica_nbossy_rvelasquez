@@ -2,6 +2,7 @@
 Para la construcción de esta base de datos sobre las ganadoras de las 17 temporadas de RuPaul’s Drag Race, se utilizaron diversas fuentes confiables que permitieran tanto obtener la información como verificar su veracidad:
 
 **1. Wiki Fandom: 	Wiki Fandom (RuPaul’s Drag Race Wiki):** Esta fue la fuente principal, ya que presenta un desglose detallado del desempeño de cada participante por temporada, sus características, y datos como edad, signo zodiacal, tipo de drag que realiza, entre otros. Elegimos esta fuente porque se actualiza constantemente, tiene una estructura clara y permite acceder fácilmente a información específica, con referencias cruzadas.
+m
 
 **2. The Daily Tar Heel, The Wrap y Sentido G:** Estas fuentes periodísticas se usaron para complementar y verificar los datos obtenidos desde la Wiki. Por ejemplo, en algunos casos donde las edades no estaban claras o había contradicciones, se recurrió a artículos específicos que analizaban la trayectoria de cada ganadora o hacían reportajes especiales sobre los hitos del programa. La diversidad de medios también aportó una visión más amplia sobre los estilos de drag y los contextos culturales de las ganadoras.
 ### Una vez recopilada la información, se procedió a ordenarla y limpiarla para asegurar su utilidad y coherencia. El proceso de limpieza incluyó los siguientes pasos:
