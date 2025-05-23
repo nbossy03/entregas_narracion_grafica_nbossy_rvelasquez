@@ -6,6 +6,8 @@ Existen vacíos en distintos lugares pero esto es esperable! Esto se debe a que,
  A lo largo de la base de datos se presenta, en inglés el desempeño de las competidas en distintos desafíos, clasificado por el tipo de desafío en vez del episodio. 
 
 #### Glosario:
+
+### TIPOS DE DESAFÍO:
 **acting1 y acting2**: desafíos de actuación.
 
 **advert1 y advert2**: desafíos de anuncios.
@@ -40,9 +42,24 @@ Existen vacíos en distintos lugares pero esto es esperable! Esto se debe a que,
 
 **talent show**: desafío de talentos variados.
 
+### TODOS LOS DESEMPEÑOS SE DIVIDEN EN: 
+1. WIN: Ganadora 
+2. HIGH: Puesto alto 
+3. SAFE: Pasa al siguiente episodio sin problemas en su posición
+4. LOW: Entre las 3 peores 
+5. BOTTOM: Entre las 2 peores, pero gana su respectivo Lip Sync
+
+### OTROS: 
 **maxi_challenges_won**: número de desafíos principales que ganó cada reina.
 
 **times_high**: número de veces en que las drag queens tuvieron una posición alta en el desafío pero no ganaron.
 
 **times_low**: número de veces en que las drag queens quedaron entre las 3 peores, pero sin hacer Lip Sync for your Life. 
-**times_in_bottom_2**: 
+
+**times_in_bottom_2**: número de veces en que las drag queens quedaron entre las 2 peores, haciendo Lip Sync for your Life y ganando este. 
+
+**times_as_team_captain**: número de veces en que las drag queens quedaron como líderes de un equipo para un Maxi Challenge. 
+
+**lip_syncs_won**: número de lip syncs que ganó cada competidora, incluyendo los lip syncs de coronación. 
+**miss_congeniality**: respuesta sí o no, dependiendo de si la drag queen quedó como Miss Congeniality de la temporada. 
+
