@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Se busca Superstar</title>
+
+  <!-- Fuente Lobster -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
   <style>
     body {
-      .logo {
-      font-family: 'Lobster', cursive;
-      font-size: 3.2rem;
-      letter-spacing: 1px;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #fdfdfd;
@@ -17,17 +18,33 @@
       line-height: 1.6;
     }
 
+    .logo {
+      line-height: 1.1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-sub {
+      font-family: 'Lobster', cursive;
+      color: #5CC2E7;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .logo-main {
+      font-family: 'Lobster', cursive;
+      color: #FF1C81;
+      font-size: 3.2rem;
+      letter-spacing: 1px;
+      display: block;
+    }
+
     header {
       background: linear-gradient(to right, #f72585, #7209b7);
       color: white;
       padding: 3rem 1rem;
       text-align: center;
-    }
-
-    header h1 { 
-        h1 class="logo">Se busca Superstar</h1>
-         font-size: 2.8rem;
-        margin: 0;
     }
 
     header p {
@@ -71,19 +88,21 @@
     }
   </style>
 </head>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 <body>
 
   <header>
-    <h1>Se busca Superstar</h1>
+    <div class="logo">
+      <span class="logo-sub">Se busca</span>
+      <span class="logo-main">Superstar</span>
+    </div>
     <p>¿Qué es lo que necesita una drag queen para ganar <em>RuPaul's Drag Race</em>?</p>
   </header>
 
   <main>
     <section>
       <h2>Introducción</h2>
-      <p>Desde hace más de una década, *RuPaul’s Drag Race* ha coronado a algunas de las drag queens más talentosas del mundo. Pero... ¿qué tienen en común las ganadoras? ¿Se puede predecir quién se llevará la corona? Este proyecto explora datos, visualizaciones y patrones ocultos que revelan los ingredientes de una verdadera Superstar.</p>
+      <p>Desde hace más de una década, <em>RuPaul’s Drag Race</em> ha coronado a algunas de las drag queens más talentosas del mundo. Pero... ¿qué tienen en común las ganadoras? ¿Se puede predecir quién se llevará la corona? Este proyecto explora datos, visualizaciones y patrones ocultos que revelan los ingredientes de una verdadera Superstar.</p>
     </section>
 
     <section>
