@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Se busca Superstar</title>
 
-  <!-- Fuente Lobster -->
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     body {
@@ -18,6 +16,14 @@
       background-color: #fdfdfd;
       color: #222;
       line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #f72585, #7209b7);
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      position: relative;
     }
 
     .logo {
@@ -42,16 +48,59 @@
       display: block;
     }
 
-    header {
-      background: linear-gradient(to right, #f72585, #7209b7);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
     header p {
       font-size: 1.3rem;
       margin-top: 1rem;
+    }
+
+    nav {
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav li {
+      padding: 1rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #7209b7;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f72585;
+    }
+
+    .share-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #fff;
+      color: #f72585;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .share-button:hover {
+      background-color: #ffe5f1;
     }
 
     main {
@@ -65,8 +114,9 @@
     }
 
     h2 {
+      font-family: 'Lobster', cursive;
       color: #7209b7;
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
@@ -92,16 +142,9 @@
 </head>
 
 <body>
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fdfdfd;
-  color: #222;
-  line-height: 1.6;
-}
-
 
   <header>
+    <button class="share-button" onclick="sharePage()">Compartir</button>
     <div class="logo">
       <span class="logo-sub">Se busca</span>
       <span class="logo-main">Superstar</span>
@@ -109,37 +152,59 @@
     <p>¿Qué es lo que necesita una drag queen para ganar <em>RuPaul's Drag Race</em>?</p>
   </header>
 
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="#participantes">Participantes</a></li>
+      <li><a href="#ganadoras">Ganadoras</a></li>
+      <li><a href="#finalistas">Finalistas</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section>
+    <section id="introduccion">
       <h2>Introducción</h2>
       <p>Desde hace más de una década, <em>RuPaul’s Drag Race</em> ha coronado a algunas de las drag queens más talentosas del mundo. Pero... ¿qué tienen en común las ganadoras? ¿Se puede predecir quién se llevará la corona? Este proyecto explora datos, visualizaciones y patrones ocultos que revelan los ingredientes de una verdadera Superstar.</p>
     </section>
 
-    <section>
+    <section id="ganadoras">
       <h2>¿Quiénes ganan?</h2>
       <p>Analizando más de una decena de temporadas, descubrimos que la mayoría de las ganadoras tienen entre 25 y 33 años, y suelen destacarse en ciertos tipos de desafíos específicos.</p>
       <div class="visual">
-        <img src="vis_01.jpg" alt="Visualización: Desempeño de las ganadoras por tipo de desafío">
+        <img src="vis_01.jpg" alt="Visualización: Desempeño de las ganadoras por tipo de desafío" />
       </div>
     </section>
 
-    <section>
+    <section id="snatchgame">
       <h2>¿Importa el Snatch Game?</h2>
       <p>El Snatch Game es uno de los retos más icónicos del show. Sin embargo, solo una parte de las ganadoras ha logrado vencer en él. Esto sugiere que hay otros desafíos con mayor peso competitivo.</p>
       <div class="visual">
-        <img src="vis_02.jpg" alt="Visualización: Desafíos más ganados por las ganadoras">
+        <img src="vis_02.jpg" alt="Visualización: Desafíos más ganados por las ganadoras" />
       </div>
     </section>
 
-    <section>
+    <section id="conclusiones">
       <h2>Conclusiones</h2>
       <p>Ser una drag queen carismática, talentosa y con versatilidad escénica no es suficiente: la consistencia, la creatividad y un desempeño sólido en los desafíos de actuación y diseño parecen ser las claves para conquistar el trono. Así, más que suerte, la fórmula del éxito se construye episodio tras episodio.</p>
     </section>
   </main>
 
   <footer>
-    <p>Proyecto realizado por Nicolás Bossy · Escuela de Periodismo UC · 2025</p>
+    <p>Proyecto realizado por Nicolás Bossy y Belén Navarro · Escuela de Periodismo UC · 2025</p>
   </footer>
+
+  <!-- Script para compartir -->
+  <script>
+    function sharePage() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        alert("¡Enlace copiado al portapapeles!");
+      }).catch(err => {
+        alert("Error al copiar el enlace");
+        console.error(err);
+      });
+    }
+  </script>
 
 </body>
 </html>
