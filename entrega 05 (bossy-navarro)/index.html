@@ -10,16 +10,13 @@
 
   <style>
     body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  /* Gradiente de durazno a rosado suave */
-  background: linear-gradient(to bottom,#FFF67B
- ,#C81564 ); 
-  color: #222;
-  line-height: 1.6;
-  }
-    
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #FFF67B, #C81564);
+      color: #222;
+      line-height: 1.6;
+    }
 
     header {
       background: linear-gradient(to right, #f72585, #7209b7);
@@ -169,11 +166,23 @@
       background-color: #eee;
       font-size: 0.9rem;
     }
+
+    /* Estilo para sección colapsable */
+    #participantes {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 1s ease, opacity 1s ease;
+    }
+
+    #participantes.open {
+      max-height: 2000px;
+      opacity: 1;
+    }
   </style>
 </head>
 
 <body>
-
   <header>
     <button class="share-button" onclick="sharePage()">Compartir</button>
     <div class="logo">
@@ -183,7 +192,6 @@
     <p>¿Qué es lo que necesita una drag queen para ganar <em>RuPaul's Drag Race</em>?</p>
   </header>
 
-  <!-- Menú de navegación -->
   <nav>
     <ul>
       <li><a href="#participantes">Participantes</a></li>
@@ -195,14 +203,15 @@
   <main>
     <section id="introduccion">
       <h2>Introducción</h2>
-      <p>Desde 2009, el programa de televisión de reality, dirigido por la Drag Queen más fabulosa y famosa del mundo; Ru Paul, <em>RuPaul’s Drag Race</em> ha coronado a algunas de las transformistas— más talentosas de Estados Unidos y más tarde, del mundo. Pero... ¿qué tienen en común las ganadoras? ¿Se puede predecir quién se llevará la corona? Este proyecto explora datos, visualizaciones y patrones ocultos que revelan los ingredientes secretos que crean a una verdadera Superestrella del Drag.</p>
+      <p>Desde 2009, el programa de televisión de reality, dirigido por la Drag Queen más fabulosa y famosa del mundo; Ru Paul, <em>RuPaul’s Drag Race</em> ha coronado a algunas de las transformistas más talentosas de Estados Unidos y más tarde, del mundo. Pero... ¿qué tienen en común las ganadoras? ¿Se puede predecir quién se llevará la corona? Este proyecto explora datos, visualizaciones y patrones ocultos que revelan los ingredientes secretos que crean a una verdadera Superestrella del Drag.</p>
     </section>
 
     <section id="ganadoras">
       <h2>¿Qué es una Drag Queen?</h2>
-      <p> Una drag queen o una transformista es una persona, generalmente un hombre, que se viste y actúa como una mujer exagerada, utilizando maquillaje, pelucas, vestuario y a veces, exagerando gestos y actitudes femeninas, con fines de entretenimiento. No se considera necesariamente una persona transgénero ni necesariamente implica una orientación sexual específica. El drag es una forma de arte y expresión, y las drag queens pueden ser artistas que actúan en espectáculos, clubes nocturnos o eventos especiales.</p>
+      <p>Una drag queen o una transformista es una persona, generalmente un hombre, que se viste y actúa como una mujer exagerada, utilizando maquillaje, pelucas, vestuario y a veces, exagerando gestos y actitudes femeninas, con fines de entretenimiento. No se considera necesariamente una persona transgénero ni necesariamente implica una orientación sexual específica.</p>
       <div class="visual">
-     <img src="img/S1_Cast.webp" alt="drag queens">
+        <img src="img/S1_Cast.webp" alt="drag queens">
+      </div>
     </section>
 
     <section id="estadosparticipantes">
@@ -214,13 +223,13 @@
     </section>
 
     <section id="porqueprocedencia">
-      <h2> ¿Por qué suelen venir de estos Estados? </h2>
-      <p> California, Nueva York, Texas, Florida, Georgia e Illinois concentran la mayoría de las participantes de RuPaul’s Drag Race por una razón clara: allí florecen las escenas drag más vibrantes de Estados Unidos. Estas regiones no solo cuentan con ciudades clave como Los Ángeles, Nueva York, Chicago o Atlanta, sino que también ofrecen una mezcla de alta población, diversidad cultural y espacios seguros para el arte drag. Además, la cercanía con la industria del entretenimiento y la historia activista LGBTQ+ en estas zonas han convertido a estos estados en semilleros naturales de talento drag, haciendo que las queens que los habitan estén mejor posicionadas para llegar a la competencia.</p>
+      <h2>¿Por qué suelen venir de estos Estados?</h2>
+      <p>California, Nueva York, Texas, Florida, Georgia e Illinois concentran la mayoría de las participantes de RuPaul’s Drag Race por una razón clara: allí florecen las escenas drag más vibrantes de Estados Unidos...</p>
     </section>
 
     <section id="conclusiones">
       <h2>Conclusiones</h2>
-      <p>Ser una drag queen carismática, talentosa y con versatilidad escénica no es suficiente: la consistencia, la creatividad y un desempeño sólido en los desafíos de actuación y diseño parecen ser las claves para conquistar el trono. Así, más que suerte, la fórmula del éxito se construye episodio tras episodio.</p>
+      <p>Ser una drag queen carismática, talentosa y con versatilidad escénica no es suficiente...</p>
     </section>
 
     <section id="participantes">
@@ -251,7 +260,6 @@
     <p>Proyecto realizado por Nicolás Bossy y Belén Navarro · Escuela de Periodismo UC · 2025</p>
   </footer>
 
-  <!-- Script para compartir -->
   <script>
     function sharePage() {
       const url = window.location.href;
@@ -264,8 +272,7 @@
     }
   </script>
 
-  <!-- Script de Datawrapper para ajustar altura del iframe -->
-  <script type="text/javascript">
+  <script>
     !function(){
       "use strict";
       window.addEventListener("message",(function(e){
@@ -282,5 +289,19 @@
     }();
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const link = document.querySelector('a[href="#participantes"]');
+      const participantes = document.querySelector("#participantes");
+
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        participantes.classList.add("open");
+        setTimeout(() => {
+          participantes.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      });
+    });
+  </script>
 </body>
 </html>
