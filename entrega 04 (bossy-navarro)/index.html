@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Se busca Superstar</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #FFF67B, #C81564); 
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #f72585, #7209b7);
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo {
+      line-height: 1.1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-sub {
+      font-family: 'Lobster', cursive;
+      color: #5CC2E7;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .logo-main {
+      font-family: 'Lobster', cursive;
+      color: #FF1C81;
+      font-size: 3.2rem;
+      letter-spacing: 1px;
+      display: block;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    nav {
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav li {
+      padding: 1rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #7209b7;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #f72585;
+    }
+
+    .share-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #fff;
+      color: #f72585;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .share-button:hover {
+      background-color: #ffe5f1;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'Lobster', cursive;
+      color: #7209b7;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .visual {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .visual img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-family: 'Lobster', cursive;
+      font-size: 1.5rem;
+      color: #f72585;
+      margin: 0.5rem 0;
+    }
+
+    .collapsible-content {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.7s ease-out;
+    }
+
+    .collapsible-content.active {
+      max-height: 2000px;
+      transition: max-height 1s ease-in;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #eee;
+      font-size: 0.9rem;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+  <!-- (Resto del contenido HTML) -->
+
+  <section id="visualizacion">
+    <h2>Entonces... ¿Qué desafíos ganan más las reinas que se coronan?</h2>
+    <div id="vis" class="visual"></div>
+  </section>
+
+  <script>
+    (function(vegaEmbed) {
+      var spec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": 700,
+        "height": 400,
+        "title": "Desafíos más ganados por las ganadoras de RuPaul's Drag Race",
+        "data": {
+          "values": [
+            {"challenge": "acting", "win_count": 4},
+            {"challenge": "acting-2", "win_count": 1},
+            {"challenge": "advert", "win_count": 5},
+            {"challenge": "advert-2", "win_count": 0},
+            {"challenge": "design", "win_count": 2},
+            {"challenge": "design-2", "win_count": 2},
+            {"challenge": "design-3", "win_count": 1},
+            {"challenge": "improv", "win_count": 4},
+            {"challenge": "improv-2", "win_count": 1},
+            {"challenge": "snatch-game", "win_count": 3},
+            {"challenge": "stand-up", "win_count": 0},
+            {"challenge": "rusical", "win_count": 0},
+            {"challenge": "rusical-2", "win_count": 0},
+            {"challenge": "girl-groups", "win_count": 0},
+            {"challenge": "runway", "win_count": 1},
+            {"challenge": "singing", "win_count": 1},
+            {"challenge": "singing-2", "win_count": 0},
+            {"challenge": "main-ball", "win_count": 5},
+            {"challenge": "ball-2", "win_count": 0},
+            {"challenge": "choreo", "win_count": 0},
+            {"challenge": "makeover", "win_count": 2},
+            {"challenge": "talent-show", "win_count": 0}
+          ]
+        },
+        "mark": {"type": "bar", "color": "#f72585"},
+        "encoding": {
+          "x": {
+            "field": "challenge",
+            "type": "nominal",
+            "sort": "-y",
+            "title": "Tipo de desafío"
+          },
+          "y": {
+            "field": "win_count",
+            "type": "quantitative",
+            "title": "Veces que fue ganado por ganadoras"
+          },
+          "tooltip": [
+            {"field": "challenge", "type": "nominal"},
+            {"field": "win_count", "type": "quantitative"}
+          ]
+        },
+        "config": {
+          "axisX": {"labelAngle": 45}
+        }
+      };
+
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+        el.innerHTML = ('<div style="color:red;">'
+                      + '<p>JavaScript Error: ' + error.message + '</p>'
+                      + "<p>This usually means there's a typo in your chart specification. "
+                      + "See the javascript console for the full traceback.</p>"
+                      + '</div>');
+        throw error;
+      }
+
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt).catch(error => showError(el, error));
+    })(vegaEmbed);
+  </script>
+</body>
+</html>
