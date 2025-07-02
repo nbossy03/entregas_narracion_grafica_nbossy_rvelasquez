@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axisX": {"labelAngle": 45}}, "data": {"name": "data-79e19e7d83b650e4baab521b0cfd38d0"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "challenge", "type": "nominal"}, {"field": "win_count", "type": "quantitative"}], "x": {"field": "challenge", "sort": "-y", "title": "Tipo de desaf\u00edo", "type": "nominal"}, "y": {"field": "win_count", "title": "Veces que fue ganado por ganadoras", "type": "quantitative"}}, "height": 400, "title": "Desaf\u00edos m\u00e1s ganados por las ganadoras de RuPaul's Drag Race", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-79e19e7d83b650e4baab521b0cfd38d0": [{"challenge": "acting", "win_count": 4}, {"challenge": "acting-2", "win_count": 1}, {"challenge": "advert", "win_count": 5}, {"challenge": "advert-2", "win_count": 0}, {"challenge": "design", "win_count": 2}, {"challenge": "design-2", "win_count": 2}, {"challenge": "design-3", "win_count": 1}, {"challenge": "improv", "win_count": 4}, {"challenge": "improv-2", "win_count": 1}, {"challenge": "snatch-game", "win_count": 3}, {"challenge": "stand-up", "win_count": 0}, {"challenge": "rusical", "win_count": 0}, {"challenge": "rusical-2", "win_count": 0}, {"challenge": "girl-groups", "win_count": 0}, {"challenge": "runway", "win_count": 1}, {"challenge": "singing", "win_count": 1}, {"challenge": "singing-2", "win_count": 0}, {"challenge": "main-ball", "win_count": 5}, {"challenge": "ball-2", "win_count": 0}, {"challenge": "choreo", "win_count": 0}, {"challenge": "makeover", "win_count": 2}, {"challenge": "talent-show", "win_count": 0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

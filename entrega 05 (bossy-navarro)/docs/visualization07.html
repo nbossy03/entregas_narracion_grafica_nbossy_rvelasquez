@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-ffda2251d4ab38ea19d3f86f14675c81"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Resultado", "type": "nominal"}, "x": {"field": "Resultado", "type": "nominal"}, "y": {"field": "Cantidad", "type": "quantitative"}}, "title": "Desempe\u00f1o de ganadoras en el Snatch Game", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-ffda2251d4ab38ea19d3f86f14675c81": [{"Resultado": "SAFE", "Cantidad": 5}, {"Resultado": "HIGH", "Cantidad": 5}, {"Resultado": "WIN", "Cantidad": 3}, {"Resultado": "BTM2", "Cantidad": 1}, {"Resultado": "BTM7", "Cantidad": 1}]}};
+      var embedOpt = {"actions": false, "mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

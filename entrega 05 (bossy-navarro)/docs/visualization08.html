@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-511cc7d8676bb5414e19beb608e49ba7"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Finalistas", "type": "quantitative"}, "x": {"field": "Temporada", "type": "nominal"}, "y": {"field": "Finalistas", "type": "quantitative"}}, "title": "N\u00famero de finalistas por temporada", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-511cc7d8676bb5414e19beb608e49ba7": [{"Temporada": 14, "Finalistas": 4}, {"Temporada": 15, "Finalistas": 3}, {"Temporada": 1, "Finalistas": 2}, {"Temporada": 2, "Finalistas": 2}, {"Temporada": 3, "Finalistas": 2}, {"Temporada": 16, "Finalistas": 2}, {"Temporada": 17, "Finalistas": 2}, {"Temporada": 4, "Finalistas": 1}, {"Temporada": 5, "Finalistas": 1}, {"Temporada": 9, "Finalistas": 1}, {"Temporada": 8, "Finalistas": 1}, {"Temporada": 7, "Finalistas": 1}, {"Temporada": 6, "Finalistas": 1}, {"Temporada": 13, "Finalistas": 1}, {"Temporada": 12, "Finalistas": 1}, {"Temporada": 11, "Finalistas": 1}, {"Temporada": 10, "Finalistas": 1}]}};
+      var embedOpt = {"actions": false, "mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

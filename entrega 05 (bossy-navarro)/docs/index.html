@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Se busca Superstar</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #FFF67B, #C81564);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #f72585, #7209b7);
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo {
+      line-height: 1.1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-sub {
+      font-family: 'Lobster', cursive;
+      color: #5CC2E7;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .logo-main {
+      font-family: 'Lobster', cursive;
+      color: #FF1C81;
+      font-size: 3.2rem;
+      letter-spacing: 1px;
+      display: block;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    nav {
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav li {
+      padding: 1rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #7209b7;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f72585;
+    }
+
+    .share-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #fff;
+      color: #f72585;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .share-button:hover {
+      background-color: #ffe5f1;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'Lobster', cursive;
+      color: #7209b7;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .visual {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .visual img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-family: 'Lobster', cursive;
+      font-size: 1.5rem;
+      color: #f72585;
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #eee;
+      font-size: 0.9rem;
+    }
+
+    /* Estilo para sección colapsable */
+    #participantes {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 1s ease, opacity 1s ease;
+    }
+
+    #participantes.open {
+      max-height: 2000px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<body>
+  <header>
+    <button class="share-button" onclick="sharePage()">Compartir</button>
+    <div class="logo">
+      <span class="logo-sub">Se busca</span>
+      <span class="logo-main">Superstar</span>
+    </div>
+    <p>¿Qué es lo que necesita una drag queen para ganar <em>RuPaul's Drag Race</em>?</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#participantes">Participantes</a></li>
+      <li><a href="#ganadoras">Ganadoras</a></li>
+      <li><a href="#finalistas">Finalistas</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="introduccion">
+      <p>Desde 2009, el programa de televisión de reality, dirigido por la Drag Queen más fabulosa y famosa del mundo; Ru Paul, <em>RuPaul’s Drag Race</em> ha coronado a algunas de las transformistas más talentosas de Estados Unidos y más tarde, del mundo. Pero... ¿qué tienen en común las ganadoras? ¿Se puede predecir quién se llevará la corona? Este proyecto explora datos, visualizaciones y patrones ocultos que revelan los ingredientes secretos que crean a una verdadera Superestrella del Drag.</p>
+    </section>
+
+    <section id="ganadoras">
+      <h2>¿Qué es una Drag Queen?</h2>
+      <p>Una drag queen o una transformista es una persona, generalmente un hombre, que se viste y actúa como una mujer exagerada, utilizando maquillaje, pelucas, vestuario y a veces, exagerando gestos y actitudes femeninas, con fines de entretenimiento. No se considera necesariamente una persona transgénero ni necesariamente implica una orientación sexual específica.</p>
+      <div class="visual">
+        <img src="img/S1_Cast.webp" alt="drag queens">
+      </div>
+    </section>
+
+    <section id="estadosparticipantes">
+      <h2>¿De dónde vienen las participantes de RuPaul's Drag Race?</h2>
+      <div class="visual">
+        <iframe title="Procedencia de Participantes" aria-label="Mapa" id="datawrapper-chart-0oYrK" src="https://datawrapper.dwcdn.net/0oYrK/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="512" data-external="1"></iframe>
+      </div>
+    </section>
+
+    <section id="porqueprocedencia">
+      <h2>¿Por qué suelen venir de estos Estados?</h2>
+      <p>California, Nueva York, Texas, Florida, Georgia e Illinois concentran la mayoría de las participantes de RuPaul’s Drag Race por una razón clara: allí florecen las escenas drag más vibrantes de Estados Unidos. Estas regiones no solo cuentan con ciudades clave como Los Ángeles, Nueva York, Chicago o Atlanta, sino que también ofrecen una mezcla de alta población, diversidad cultural y espacios seguros para el arte drag. Además, la cercanía con la industria del entretenimiento y la historia activista LGBTQ+ en estas zonas han convertido a estos estados en semilleros naturales de talento drag, haciendo que las queens que los habitan estén mejor posicionadas para llegar a la competencia. Además, las ciudades de las que suelen venir las participantes, son políticamente muy liberales y democrátas, por lo tanto estas son más seguras para la comunidad LGBTQ+ y la cultura drag. Esto es irónico ya que muchas de las queens vienen de Texas, un estado ultraconservador y anti-drag, pero que tiene ciudades como Austin y Dallas, que poseen una gran escena queer.</p>
+    </section>
+
+    <section id="retos-ganados">
+  <h2>¿Qué tipo de desafíos ganan las ganadoras?</h2>
+  <p>Analizando los desafíos que más veces fueron ganados por las reinas que eventualmente se coronaron, destacan los retos de actuación, improvisación y diseño. Esto sugiere que dominar estas áreas es clave para alcanzar la victoria en el programa.</p>
+  <div id="vis_02"></div>
+</section>
+
+<section>
+  <h2>¿Qué edad tienen las participantes de Ru Paul's Drag Race?</h2>
+  <p>Un análisis visual de las edades de las concursantes ganadoras y no ganadoras muestra que no hay una regla fija, aunque algunas tendencias emergen. Por ejemplo, las ganadoras tienen una edad media de 28,5 años mientras que las participantes que no ganaron tienen una edad promedio de 27,5 años. Entre las no ganadoras, Charlie Hides, es la queen de mayor edad entre las participantes del programa con 52 años de edad, muy lejana a la media entre las concursantes. </p>
+  <iframe src="visualization05.html" width="100%" height="420" frameborder="0" style="border:0; margin-top:1em;" allowfullscreen></iframe>
+</section>
+
+<section>
+  <h2>¿Quienes son las Miss Congeniality? ¿Llegan a ganar alguna vez?</h2>
+  <p>En RuPaul’s Drag Race, el título de Miss Congeniality se otorga a la concursante más querida y apreciada por sus compañeras (en las primeras temporadas) o por el público (desde la temporada 9 en adelante). Este premio reconoce amabilidad, compañerismo y carisma dentro de la competencia, no necesariamente desempeño en desafíos o pasarela.</p>
+  <iframe src="visualization06.html" width="100%" height="420" frameborder="0" style="border:0; margin-top:1em;" allowfullscreen></iframe>
+</section>
+
+<section>
+  <p>La ganadora de la temporada suele destacarse en desafíos, pasarela, versatilidad artística, y narrativa de crecimiento. Miss Congeniality es más una figura querida y empática, que puede no ser la más competitiva o ambiciosa.
+
+Muchas veces, estas no llegan al Top 4, siendo que la mayoría de las Miss Congeniality quedan eliminadas antes de la final, por lo tanto no tienen oportunidad real de competir por la corona. Estas concursantes no siempre son las favoritas del jurado. A veces son queridas por sus compañeras o el público, pero no logran destacar suficientemente en los criterios técnicos de RuPaul y el panel.
+
+Algunas participantes consideradas "congenial" no muestran el nivel de "hambre" o "competitividad feroz" que muchas ganadoras sí demuestran.</p>
+</section>
+
+<section>
+  <h2>Convertirse en una Superstar</h2>
+  <p>A lo largo de nuestra investigación, encontramos que las participantes que llegan a convertirse en finalistas o en ganadoras triunfan en categorías y desafíos que demandan creatividad, volatilidad, carisma, adaptabilidad, y destreza. A continuación, veremos algunos ejemplos de estas características que comparten entre sí.</p>
+</section>
+
+<section>
+  <h2>Desempeño en el Snatch Game</h2>
+  <p>El Snatch Game es uno de los desafíos más icónicos y esperados de RuPaul’s Drag Race. Es una parodia del clásico programa de concursos estadounidense Match Game, y suele aparecer en cada temporada desde la segunda (con algunas excepciones)
+    Las reinas deben imitar a una celebridad real (o, a veces, un personaje ficticio) en un formato de panel de juegos. RuPaul actúa como presentador y les hace preguntas absurdas o con doble sentido, y las reinas deben responder en personaje, con humor, ingenio y precisión.
+El objetivo no es solo parecerse a la celebridad, sino también; ser rápidas mentalmente, mantener el personaje de forma constante y ser graciosas e irreverentes, sin perder la esencia de la figura que están parodiando.</p>
+  <iframe src="visualization07.html" width="100%" height="420" frameborder="0" style="border:0; margin-top:1em;" allowfullscreen></iframe>
+  <p> El Snatch Game es considerado una prueba de fuego dentro de la competencia porque mide la versatilidad y el sentido del humor de la concursante, así como requiere improvisación, caracterización, carisma y conocimiento cultural. Muchas ganadoras del programa brillaron en este reto (Bianca Del Rio, Bob the Drag Queen, Jinkx Monsoon, etc.), pero hubo otras, como sale relfejado en este gráfico que se mantuvieron en el BOTTOM, es decir, estuvieron a punto de ser eliminadas. Lo que si comparten las ganadoras es que en su mayoría estas tienen un desempeño ejemplar en el Snatch Game, pero no siempre lo ganan.</p>
+</section>
+
+
+
+    <section id="conclusiones">
+      <h2>Entonces...</h2>
+      <p>Carisma, talento y versatilidad escénica no bastan: la clave está en la consistencia, la creatividad y un buen desempeño en desafíos de actuación y diseño. La mayoría de las queens que se volvieron ganadoras se desempeñaron de muy buena manera en los desafíos del programa que giraban en torno a la improvisación. Más que suerte, el éxito se construye episodio a episodio en torno a una fuerte capacidad creativa y de entretener al público. </p>
+    </section>
+
+    <section id="participantes">
+      <h2>Participantes</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="img/bianca.jpg" alt="Bianca Del Rio">
+          <h3>Bianca Del Rio</h3>
+          <p><strong>Temporada:</strong> 6</p>
+          <p><strong>Estilo:</strong> Comedia, insult queen</p>
+          <p><strong>Edad al ganar:</strong> 37 años</p>
+          <p>Conocida por su humor ácido y su dominio escénico, fue una de las pocas en nunca quedar en el bottom.</p>
+        </div>
+
+        <div class="card">
+          <img src="img/sasha.jpeg" alt="Sasha Velour">
+          <h3>Sasha Velour</h3>
+          <p><strong>Temporada:</strong> 9</p>
+          <p><strong>Estilo:</strong> Conceptual, artística</p>
+          <p><strong>Edad al ganar:</strong> 30 años</p>
+          <p>Revolucionó el formato con su icónico lip sync con pétalos, y se destacó por su estética intelectual.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto realizado por Nicolás Bossy y Belén Navarro · Escuela de Periodismo UC · 2025</p>
+  </footer>
+
+  <script>
+    function sharePage() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        alert("¡Enlace copiado al portapapeles!");
+      }).catch(err => {
+        alert("Error al copiar el enlace");
+        console.error(err);
+      });
+    }
+  </script>
+
+  <script>
+    !function(){
+      "use strict";
+      window.addEventListener("message",(function(e){
+        if(void 0!==e.data["datawrapper-height"]){
+          var t=document.querySelectorAll("iframe");
+          for(var a in e.data["datawrapper-height"])
+            for(var r,i=0;r=t[i];i++)
+              if(r.contentWindow===e.source){
+                var d=e.data["datawrapper-height"][a]+"px";
+                r.style.height=d
+              }
+        }
+      }))
+    }();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const link = document.querySelector('a[href="#participantes"]');
+      const participantes = document.querySelector("#participantes");
+
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        participantes.classList.add("open");
+        setTimeout(() => {
+          participantes.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      });
+    });
+  </script>
+  <script>
+  const spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "title": "Desafíos más ganados por las ganadoras de RuPaul's Drag Race",
+    "data": {
+      "values": [
+        {"challenge": "acting", "win_count": 4},
+        {"challenge": "acting-2", "win_count": 1},
+        {"challenge": "advert", "win_count": 5},
+        {"challenge": "advert-2", "win_count": 0},
+        {"challenge": "design", "win_count": 2},
+        {"challenge": "design-2", "win_count": 2},
+        {"challenge": "design-3", "win_count": 1},
+        {"challenge": "improv", "win_count": 4},
+        {"challenge": "improv-2", "win_count": 1},
+        {"challenge": "snatch-game", "win_count": 3},
+        {"challenge": "stand-up", "win_count": 0},
+        {"challenge": "rusical", "win_count": 0},
+        {"challenge": "rusical-2", "win_count": 0},
+        {"challenge": "girl-groups", "win_count": 0},
+        {"challenge": "runway", "win_count": 1},
+        {"challenge": "singing", "win_count": 1},
+        {"challenge": "singing-2", "win_count": 0},
+        {"challenge": "main-ball", "win_count": 5},
+        {"challenge": "ball-2", "win_count": 0},
+        {"challenge": "choreo", "win_count": 0},
+        {"challenge": "makeover", "win_count": 2},
+        {"challenge": "talent-show", "win_count": 0}
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "challenge",
+        "type": "nominal",
+        "sort": "-y",
+        "title": "Tipo de desafío"
+      },
+      "y": {
+        "field": "win_count",
+        "type": "quantitative",
+        "title": "Veces ganado por ganadoras"
+      },
+      "tooltip": [
+        {"field": "challenge", "type": "nominal"},
+        {"field": "win_count", "type": "quantitative"}
+      ]
+    }
+  };
+
+  vegaEmbed('#vis_02', spec).catch(console.error);
+</script>
+
+  vegaEmbed("#vis_02", spec).catch(console.error);
+</script>
+
+</script>
+
+</body>
+</html>

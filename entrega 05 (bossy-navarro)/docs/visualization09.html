@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-c8fe89a3f3dd83f30c15b5420ce3b4fb"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "total_wins", "type": "quantitative"}, "x": {"field": "total_wins", "title": "Retos m\u00e1s ganados", "type": "quantitative"}, "y": {"field": "contestant", "sort": "-x", "type": "nominal"}}, "title": "Top 10 Queens en Desaf\u00edos Totales", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-c8fe89a3f3dd83f30c15b5420ce3b4fb": [{"contestant": "Shea Coule\u221a\u00a9", "design": 1, "design-2": 0, "design-3": 0, "improv": 1, "improv-2": 0, "advert": 1, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 1, "rusical-2": 0, "main-ball": 1, "ball-2": 0, "acting": 0, "acting-2": 0, "total_wins": 5}, {"contestant": "Sharon Needles", "design": 1, "design-2": 0, "design-3": 0, "improv": 1, "improv-2": 0, "advert": 1, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 1, "ball-2": 0, "acting": 0, "acting-2": 0, "total_wins": 4}, {"contestant": "Ros\u221a\u00a9", "design": 0, "design-2": 0, "design-3": 0, "improv": 0, "improv-2": 0, "advert": 1, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 1, "rusical-2": 0, "main-ball": 0, "ball-2": 0, "acting": 0, "acting-2": 1, "total_wins": 3}, {"contestant": "Alexis Mateo", "design": 0, "design-2": 0, "design-3": 0, "improv": 0, "improv-2": 0, "advert": 1, "advert-2": 1, "singing": 0, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 0, "ball-2": 0, "acting": 1, "acting-2": 0, "total_wins": 3}, {"contestant": "Sasha Colby\n(Group 1)", "design": 0, "design-2": 0, "design-3": 0, "improv": 1, "improv-2": 0, "advert": 1, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 1, "ball-2": 0, "acting": 0, "acting-2": 0, "total_wins": 3}, {"contestant": "Raja", "design": 0, "design-2": 1, "design-3": 0, "improv": 0, "improv-2": 0, "advert": 0, "advert-2": 0, "singing": 1, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 0, "ball-2": 0, "acting": 0, "acting-2": 0, "total_wins": 2}, {"contestant": "Bob The Drag Queen", "design": 0, "design-2": 0, "design-3": 0, "improv": 0, "improv-2": 0, "advert": 1, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 0, "ball-2": 0, "acting": 1, "acting-2": 0, "total_wins": 2}, {"contestant": "Kim Chi", "design": 1, "design-2": 0, "design-3": 0, "improv": 0, "improv-2": 0, "advert": 0, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 1, "ball-2": 0, "acting": 0, "acting-2": 0, "total_wins": 2}, {"contestant": "Violet Chachki", "design": 1, "design-2": 0, "design-3": 0, "improv": 0, "improv-2": 0, "advert": 0, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 1, "ball-2": 0, "acting": 0, "acting-2": 0, "total_wins": 2}, {"contestant": "Manila Luzon", "design": 0, "design-2": 0, "design-3": 0, "improv": 1, "improv-2": 0, "advert": 0, "advert-2": 0, "singing": 0, "singing-2": 0, "rusical": 0, "rusical-2": 0, "main-ball": 0, "ball-2": 1, "acting": 0, "acting-2": 0, "total_wins": 2}]}};
+      var embedOpt = {"actions": false, "mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
