@@ -87,3 +87,9 @@ El estilo es **informativo y reflexivo**, buscando un equilibrio entre análisis
 - Colores chillones y extravagantes, propios del universo drag, pero seleccionados cuidadosamente para evitar fatiga visual.
 - Las fotografías permiten al lector conectarse con las estéticas, expresiones y diversidad del mundo drag.
 
+### CONTRIBUCIONES POR PARTICIPANTE
+
+# Belén Navarro:
+ - aplicación de diseño en webstory, creación de visualización de mapa de Estados Unidos, redacción de contenido de webstory, redacción de la documentación grupal.
+# Nicolás Bossy:
+- creación, estructuración, correción y expansión del código de la webstory. Aplicación de visualizaciones dentro de la webstory. Ediciones principales dentro de GitHub. 
