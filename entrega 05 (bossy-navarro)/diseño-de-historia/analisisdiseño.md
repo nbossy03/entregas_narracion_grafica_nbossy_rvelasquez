@@ -14,3 +14,4 @@ El estilo es **informativo y reflexivo**, buscando un equilibrio entre análisis
 
 - Colores chillones y extravagantes, propios del universo drag, pero seleccionados cuidadosamente para evitar fatiga visual.
 - Las fotografías permiten al lector conectarse con las estéticas, expresiones y diversidad del mundo drag.
+- Las visualizaciones fueron pensadas no solo como apoyo gráfico, sino como una forma clara y sencilla de mostrar el análisis profundo detrás de la investigación.

@@ -62,12 +62,6 @@ El análisis de las ganadoras de *RuPaul’s Drag Race* revela que el éxito en 
 - Participante de mayor edad registrada: **52 años**  
 - Aunque predominan concursantes en sus veintes y treintas, el programa ha abierto espacio (aunque en menor medida) a reinas mayores.
 
-## Subcarpeta: Visualizaciones
-
-### ¿Qué dimensiones y mensajes quieren comunicar con ellas?
-
-Las visualizaciones fueron pensadas no solo como apoyo gráfico, sino como una forma clara y sencilla de mostrar el análisis profundo detrás de la investigación.
-
 ### CONTRIBUCIONES POR PARTICIPANTE
 
 # Belén Navarro:
