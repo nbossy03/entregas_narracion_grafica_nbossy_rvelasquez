@@ -64,7 +64,9 @@ El análisis de las ganadoras de *RuPaul’s Drag Race* revela que el éxito en 
 
 ### CONTRIBUCIONES POR PARTICIPANTE
 
-# Belén Navarro:
- - aplicación de diseño en webstory, creación de visualización de mapa de Estados Unidos, redacción de contenido de webstory, redacción de la documentación grupal.
-# Nicolás Bossy:
-- creación, estructuración, correción y expansión del código de la webstory. Aplicación de visualizaciones dentro de la webstory. Ediciones principales dentro de GitHub. 
+
+| Nombre           | Contribución  |
+|------------------|-----------|
+| Nicolás Bossy| Creación, estructuración, correción y expansión del código de la webstory. Aplicación de visualizaciones dentro de la webstory. Ediciones principales dentro de GitHub.       |
+| Belén Navarro   | creación de visualización de mapa de Estados Unidos, redacción de contenido de webstory, redacción de la documentación grupal         |
+
